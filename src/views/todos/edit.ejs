@@ -1,0 +1,32 @@
+
+<h1>Edit todos</h1>
+<form action="/<%= todo.id %>/edit" method="POST">
+    <div>
+        <label for="todo">todo:</label>
+        <input type="text" id="todo" name="title" value="<%= todo.todo %>">
+    </div>
+    <div>
+        <label for="title">category:</label>
+        <select name="category_id" class="form-select">
+            <option value=" ">select category</option>
+            <% categories.forEach(function(category) { %>                    
+                <option <%= todo.category_id == category.id ? 'selected' : '' %> value="<%= category.id %>">
+                    <%= category.name %>
+                </option>
+            <% }) %>
+        </select>
+    </div>
+    
+    <div>
+        <label for="title">user:</label>
+        <select name="user_id" class="form-select">
+            <option value=" ">select user</option>
+            <% users.forEach(function(user) { %>
+                <option <%= todo.user_id == user.id ? 'selected' : '' %> value="<%= user.id %>">
+                    <%= user.username %>
+                </option>
+            <% }) %>
+        </select>
+    </div>
+    <input type="submit" value="save"/>
+</form>
