@@ -1,0 +1,30 @@
+<h2>create</h2>
+<form method="post" action="/delete" class="mb-3" action ="/todo/<%= todo.id %>/delete">
+    <div class="mb-3">
+        <label for="name">todo</label>
+        <input  type="text" name="todo" value="<%= todo.todo %>">
+    </div>
+    <div class="mb-3">
+        <label for="user_id">user_id</label>
+        <input  type="number" name="user_id" value="<%= todo.user_id %>">
+    </div>
+    <div class="mb-3">
+        <label for="category_id">category_id</label>
+        <input  type="number" name="category_id" value="<%= todo.category_id %>">
+    </div>
+    <div class="mb-3">
+        <label for="email">created_at</label>
+        <input  type="number" name="created_at" value="<%= todo.created_at %>">
+    </div>
+    <div class="mb-3">
+        <label for="title">username</label>
+        <input  type="text" name="title" value="<%= todo.username %>">
+    </div>
+    
+    <div class="mb-3">
+        <label for="title">email</label>
+        <input  type="number" name="email" value="<%= todo.email %>">
+    </div>
+    <input  type="submit" class="btn btn-sm btn-primary" value="submit">
+
+    </form>
