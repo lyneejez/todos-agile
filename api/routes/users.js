@@ -42,7 +42,7 @@ router.patch("/:id/edit", (req, res) => {
                 return `${column} = '${value}'`;
             });
         
-            const sql = `UPDATE users SET ${updateColumns `,`})WHERE id = ${req.params.id}`;
+            const sql = `UPDATE users SET ${updateColumns.join(",")} WHERE id = ${req.params.id}`;
         
             connection.query(sql, function(err, results) {
                 if (err) {

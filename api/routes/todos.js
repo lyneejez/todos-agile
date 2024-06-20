@@ -67,7 +67,7 @@ router.post("/create", (req, res)=> {
         return `${column} = '${value}'`;
     });
 
-    const sql = `UPDATE categories SET ${updateColumns.join (',')})WHERE id = ${req.params.id}`;
+    const sql = `UPDATE categories SET ${updateColumns.join (',')} WHERE id = ${req.params.id}`;
 
     connection.query(sql, function(err, results) {
         if (err) {
