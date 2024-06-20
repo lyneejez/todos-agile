@@ -1,14 +1,20 @@
-const express= require("express")
-const app = express();
+const express = require("express")
 
-const port = 3000;
+const todosRoutes = require('./routes/todos')
+const usersRoutes = require('./routes/users')
+const categoriesRoutes = require('./routes/categories')
+
+
+const app = express();
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 
 
-app.get('/',(req, res)=> {
-    res.json({ "welcome": "welcome to our api"})
-});
+app.use('/api/users', usersRoutes);
+app.use('/api/categories', categoriesRoutes);
+app.use('/api/todos', todosRoutes);
 
-app.listen(port, (req, res) => console.log(`running on port ${port}`))
+const port = 3000;
+
+app.listen(port,(req, res) =>console.log(`listening at port ${port}`));
